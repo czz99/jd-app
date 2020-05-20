@@ -86,20 +86,26 @@ export default {
       formData: {},
       formRules: {
         userAcct: [
-          {required: true, message: '请输入用户名', trigger: 'change'}
+          {required: true, message: '请输入用户名', trigger: 'change'},
+          { min: 5, max: 12, message: '长度在 5 到 12 个字符', trigger: 'blur' },
+          { pattern: /^[^\u4e00-\u9fa5]+$/, message: '不允许输入中文', trigger: 'change' },
+          { pattern: /^[A-Za-z0-9\u4e00-\u9fa5]+$/, message: '不允许输入空格等特殊符号', trigger: 'change' }
         ],
         password: [
-          {required: true, message: '请输入密码', trigger: 'change'}
+          {required: true, message: '请输入密码', trigger: 'change'},
+          { min: 6, max: 18, message: '长度在 6 到 18 个字符', trigger: 'blur' }
         ],
         confirmPassword: [
-          {required: true, message: '请确认密码', trigger: 'change'}
+          {required: true, message: '请确认密码', trigger: 'change'},
+          { min: 6, max: 18, message: '长度在 6 到 18 个字符', trigger: 'blur' }
         ],
         phone: [
           {required: true, message: '请输入手机号', trigger: 'change'},
           { pattern: /^((0\d{2,3}-\d{7,8})|(1[34578]\d{9}))$/, message: '请输入合法手机号/电话号', trigger: 'blur' }
         ],
         userName: [
-          {required: true, message: '请输入姓名', trigger: 'change'}
+          {required: true, message: '请输入姓名', trigger: 'change'},
+          { min: 2, max: 10, message: '长度在 2 到 10 个字符', trigger: 'blur' }
         ],
         sex: [
           {required: true, message: '请选择性别', trigger: 'change'}
@@ -109,7 +115,8 @@ export default {
           { pattern: /^[1-9]\d{5}(18|19|20)\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/, message: '请输入合法的身份证号', trigger: 'blur' }
         ],
         email: [
-          {required: true, message: '请输入邮箱', trigger: 'change'}
+          {required: true, message: '请输入邮箱', trigger: 'change'},
+          { pattern: /^\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/, message: '邮箱格式不正确', trigger: 'blur' }
         ]
       }
     }

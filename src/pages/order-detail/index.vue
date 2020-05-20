@@ -104,15 +104,7 @@ export default {
       req('getClientDetail', {orderId: this.$route.query.orderId}).then(data => {
         // console.log(data)
         this.orderDetail = data.data
-        // this.orderList = data.data.goodsList
       })
-      // } else {
-      //   req('getShopDetail', {orderId: this.$route.query.orderId}).then(data => {
-      //     console.log(data)
-      //     this.orderDetail = data.data
-      //     // this.orderList = data.data.goodsList
-      //   })
-      // }
     }
   }
 }

@@ -45,7 +45,7 @@ export default {
     })
   },
   methods: {
-    // 获取商品详情
+    // 存储商品详情，跳转到商品详情页
     toDetailPage (item) {
       sessionStorage.setItem('currentComm', JSON.stringify(item))
       this.$router.push({path: '/comm-detail'})

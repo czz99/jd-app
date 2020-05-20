@@ -82,6 +82,7 @@ export default {
         this.totalType = this.getTotalType()
       })
     },
+    // 结算
     settlement () {
       let payCommList = this.list.filter(item => {
         return item.checked === true
